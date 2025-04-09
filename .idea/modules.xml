@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/fitness_flow/fitness_flow.iml" filepath="$PROJECT_DIR$/fitness_flow/fitness_flow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fitness_flow/android/fitness_flow_android.iml" filepath="$PROJECT_DIR$/fitness_flow/android/fitness_flow_android.iml" />
     </modules>
   </component>
 </project>

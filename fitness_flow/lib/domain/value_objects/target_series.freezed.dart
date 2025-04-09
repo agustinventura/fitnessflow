@@ -54,7 +54,6 @@ abstract mixin class $TargetSeriesCopyWith<$Res> {
   factory $TargetSeriesCopyWith(
           TargetSeries value, $Res Function(TargetSeries) _then) =
       _$TargetSeriesCopyWithImpl;
-
   @useResult
   $Res call({int count});
 }
@@ -130,7 +129,6 @@ abstract mixin class _$TargetSeriesCopyWith<$Res>
   factory _$TargetSeriesCopyWith(
           _TargetSeries value, $Res Function(_TargetSeries) _then) =
       __$TargetSeriesCopyWithImpl;
-
   @override
   @useResult
   $Res call({int count});

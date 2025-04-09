@@ -53,7 +53,6 @@ mixin _$RestTime implements DiagnosticableTreeMixin {
 abstract mixin class $RestTimeCopyWith<$Res> {
   factory $RestTimeCopyWith(RestTime value, $Res Function(RestTime) _then) =
       _$RestTimeCopyWithImpl;
-
   @useResult
   $Res call({int durationInSeconds});
 }
@@ -129,7 +128,6 @@ abstract mixin class _$RestTimeCopyWith<$Res>
     implements $RestTimeCopyWith<$Res> {
   factory _$RestTimeCopyWith(_RestTime value, $Res Function(_RestTime) _then) =
       __$RestTimeCopyWithImpl;
-
   @override
   @useResult
   $Res call({int durationInSeconds});

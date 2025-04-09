@@ -16,25 +16,15 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$WorkoutSession {
   WorkoutSessionId get id;
-
   RoutineId get originalRoutineId;
-
   SessionId get originalSessionId;
-
   String get routineName;
-
   String get sessionName;
-
   DateTime get startTime;
-
   DateTime? get endTime;
-
   Duration? get duration;
-
   List<PerformedExercise> get performedExercises;
-
   String? get notes;
-
   bool get isCompleted;
 
   /// Create a copy of WorkoutSession
@@ -97,7 +87,6 @@ abstract mixin class $WorkoutSessionCopyWith<$Res> {
   factory $WorkoutSessionCopyWith(
           WorkoutSession value, $Res Function(WorkoutSession) _then) =
       _$WorkoutSessionCopyWithImpl;
-
   @useResult
   $Res call(
       {WorkoutSessionId id,
@@ -113,9 +102,7 @@ abstract mixin class $WorkoutSessionCopyWith<$Res> {
       bool isCompleted});
 
   $WorkoutSessionIdCopyWith<$Res> get id;
-
   $RoutineIdCopyWith<$Res> get originalRoutineId;
-
   $SessionIdCopyWith<$Res> get originalSessionId;
 }
 
@@ -258,7 +245,6 @@ class _WorkoutSession extends WorkoutSession {
   @override
   final Duration? duration;
   final List<PerformedExercise> _performedExercises;
-
   @override
   List<PerformedExercise> get performedExercises {
     if (_performedExercises is EqualUnmodifiableListView)
@@ -333,7 +319,6 @@ abstract mixin class _$WorkoutSessionCopyWith<$Res>
   factory _$WorkoutSessionCopyWith(
           _WorkoutSession value, $Res Function(_WorkoutSession) _then) =
       __$WorkoutSessionCopyWithImpl;
-
   @override
   @useResult
   $Res call(
@@ -351,10 +336,8 @@ abstract mixin class _$WorkoutSessionCopyWith<$Res>
 
   @override
   $WorkoutSessionIdCopyWith<$Res> get id;
-
   @override
   $RoutineIdCopyWith<$Res> get originalRoutineId;
-
   @override
   $SessionIdCopyWith<$Res> get originalSessionId;
 }

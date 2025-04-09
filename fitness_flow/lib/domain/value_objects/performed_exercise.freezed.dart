@@ -16,11 +16,8 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PerformedExercise implements DiagnosticableTreeMixin {
   String get exerciseName;
-
   Weight? get weight;
-
   int get seriesCompleted;
-
   WorkoutGoal get originalGoal;
 
   /// Create a copy of PerformedExercise
@@ -70,7 +67,6 @@ abstract mixin class $PerformedExerciseCopyWith<$Res> {
   factory $PerformedExerciseCopyWith(
           PerformedExercise value, $Res Function(PerformedExercise) _then) =
       _$PerformedExerciseCopyWithImpl;
-
   @useResult
   $Res call(
       {String exerciseName,
@@ -79,7 +75,6 @@ abstract mixin class $PerformedExerciseCopyWith<$Res> {
       WorkoutGoal originalGoal});
 
   $WeightCopyWith<$Res>? get weight;
-
   $WorkoutGoalCopyWith<$Res> get originalGoal;
 }
 
@@ -209,7 +204,6 @@ abstract mixin class _$PerformedExerciseCopyWith<$Res>
   factory _$PerformedExerciseCopyWith(
           _PerformedExercise value, $Res Function(_PerformedExercise) _then) =
       __$PerformedExerciseCopyWithImpl;
-
   @override
   @useResult
   $Res call(
@@ -220,7 +214,6 @@ abstract mixin class _$PerformedExerciseCopyWith<$Res>
 
   @override
   $WeightCopyWith<$Res>? get weight;
-
   @override
   $WorkoutGoalCopyWith<$Res> get originalGoal;
 }

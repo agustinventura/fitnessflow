@@ -16,7 +16,6 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Weight implements DiagnosticableTreeMixin {
   double get value;
-
   WeightUnit get unit;
 
   /// Create a copy of Weight
@@ -56,7 +55,6 @@ mixin _$Weight implements DiagnosticableTreeMixin {
 abstract mixin class $WeightCopyWith<$Res> {
   factory $WeightCopyWith(Weight value, $Res Function(Weight) _then) =
       _$WeightCopyWithImpl;
-
   @useResult
   $Res call({double value, WeightUnit unit});
 }
@@ -133,7 +131,6 @@ class _Weight extends Weight with DiagnosticableTreeMixin {
 abstract mixin class _$WeightCopyWith<$Res> implements $WeightCopyWith<$Res> {
   factory _$WeightCopyWith(_Weight value, $Res Function(_Weight) _then) =
       __$WeightCopyWithImpl;
-
   @override
   @useResult
   $Res call({double value, WeightUnit unit});

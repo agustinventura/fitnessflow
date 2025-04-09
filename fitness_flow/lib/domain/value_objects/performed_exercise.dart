@@ -26,8 +26,12 @@ abstract class PerformedExercise with _$PerformedExercise {
     required WorkoutGoal originalGoal,
   }) = _PerformedExercise;
 
+  @override
   final String exerciseName;
+  @override
   final Weight? weight;
+  @override
   final int seriesCompleted;
+  @override
   final WorkoutGoal originalGoal;
 }

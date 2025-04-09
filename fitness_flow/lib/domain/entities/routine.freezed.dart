@@ -16,9 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Routine {
   RoutineId get id;
-
   String get name;
-
   List<Session> get sessions;
 
   /// Create a copy of Routine
@@ -52,7 +50,6 @@ mixin _$Routine {
 abstract mixin class $RoutineCopyWith<$Res> {
   factory $RoutineCopyWith(Routine value, $Res Function(Routine) _then) =
       _$RoutineCopyWithImpl;
-
   @useResult
   $Res call({RoutineId id, String name, List<Session> sessions});
 
@@ -117,7 +114,6 @@ class _Routine extends Routine {
   @override
   final String name;
   final List<Session> _sessions;
-
   @override
   List<Session> get sessions {
     if (_sessions is EqualUnmodifiableListView) return _sessions;
@@ -157,7 +153,6 @@ class _Routine extends Routine {
 abstract mixin class _$RoutineCopyWith<$Res> implements $RoutineCopyWith<$Res> {
   factory _$RoutineCopyWith(_Routine value, $Res Function(_Routine) _then) =
       __$RoutineCopyWithImpl;
-
   @override
   @useResult
   $Res call({RoutineId id, String name, List<Session> sessions});

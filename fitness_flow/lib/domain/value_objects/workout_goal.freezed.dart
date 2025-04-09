@@ -16,7 +16,6 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$WorkoutGoal implements DiagnosticableTreeMixin {
   int get quantity;
-
   WorkoutUnit get unit;
 
   /// Create a copy of WorkoutGoal
@@ -58,7 +57,6 @@ abstract mixin class $WorkoutGoalCopyWith<$Res> {
   factory $WorkoutGoalCopyWith(
           WorkoutGoal value, $Res Function(WorkoutGoal) _then) =
       _$WorkoutGoalCopyWithImpl;
-
   @useResult
   $Res call({int quantity, WorkoutUnit unit});
 }
@@ -144,7 +142,6 @@ abstract mixin class _$WorkoutGoalCopyWith<$Res>
   factory _$WorkoutGoalCopyWith(
           _WorkoutGoal value, $Res Function(_WorkoutGoal) _then) =
       __$WorkoutGoalCopyWithImpl;
-
   @override
   @useResult
   $Res call({int quantity, WorkoutUnit unit});

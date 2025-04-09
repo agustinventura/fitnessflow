@@ -16,11 +16,8 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Session {
   SessionId get id;
-
   String get name;
-
   List<SessionItem> get items;
-
   int get order;
 
   /// Create a copy of Session
@@ -55,7 +52,6 @@ mixin _$Session {
 abstract mixin class $SessionCopyWith<$Res> {
   factory $SessionCopyWith(Session value, $Res Function(Session) _then) =
       _$SessionCopyWithImpl;
-
   @useResult
   $Res call({SessionId id, String name, List<SessionItem> items, int order});
 
@@ -126,7 +122,6 @@ class _Session extends Session {
   @override
   final String name;
   final List<SessionItem> _items;
-
   @override
   List<SessionItem> get items {
     if (_items is EqualUnmodifiableListView) return _items;
@@ -170,7 +165,6 @@ class _Session extends Session {
 abstract mixin class _$SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
   factory _$SessionCopyWith(_Session value, $Res Function(_Session) _then) =
       __$SessionCopyWithImpl;
-
   @override
   @useResult
   $Res call({SessionId id, String name, List<SessionItem> items, int order});

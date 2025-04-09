@@ -11,9 +11,11 @@ abstract class SessionItem with _$SessionItem {
 
   const factory SessionItem.exercise({
     required Exercise exercise,
+    required int order,
   }) = ExerciseSessionItem;
 
   const factory SessionItem.rest({
     required RestTime restTime,
+    required int order,
   }) = RestSessionItem;
 }

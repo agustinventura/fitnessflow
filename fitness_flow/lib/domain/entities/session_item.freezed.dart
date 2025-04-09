@@ -15,35 +15,77 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$SessionItem {
+  int get order;
+
+  /// Create a copy of SessionItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $SessionItemCopyWith<SessionItem> get copyWith =>
+      _$SessionItemCopyWithImpl<SessionItem>(this as SessionItem, _$identity);
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SessionItem);
+        (other.runtimeType == runtimeType &&
+            other is SessionItem &&
+            (identical(other.order, order) || other.order == order));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, order);
 
   @override
   String toString() {
-    return 'SessionItem()';
+    return 'SessionItem(order: $order)';
   }
 }
 
 /// @nodoc
-class $SessionItemCopyWith<$Res> {
-  $SessionItemCopyWith(SessionItem _, $Res Function(SessionItem) __);
+abstract mixin class $SessionItemCopyWith<$Res> {
+  factory $SessionItemCopyWith(
+          SessionItem value, $Res Function(SessionItem) _then) =
+      _$SessionItemCopyWithImpl;
+  @useResult
+  $Res call({int order});
+}
+
+/// @nodoc
+class _$SessionItemCopyWithImpl<$Res> implements $SessionItemCopyWith<$Res> {
+  _$SessionItemCopyWithImpl(this._self, this._then);
+
+  final SessionItem _self;
+  final $Res Function(SessionItem) _then;
+
+  /// Create a copy of SessionItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? order = null,
+  }) {
+    return _then(_self.copyWith(
+      order: null == order
+          ? _self.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class ExerciseSessionItem extends SessionItem {
-  const ExerciseSessionItem({required this.exercise}) : super._();
+  const ExerciseSessionItem({required this.exercise, required this.order})
+      : super._();
 
   final Exercise exercise;
+  @override
+  final int order;
 
   /// Create a copy of SessionItem
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $ExerciseSessionItemCopyWith<ExerciseSessionItem> get copyWith =>
@@ -55,15 +97,16 @@ class ExerciseSessionItem extends SessionItem {
         (other.runtimeType == runtimeType &&
             other is ExerciseSessionItem &&
             (identical(other.exercise, exercise) ||
-                other.exercise == exercise));
+                other.exercise == exercise) &&
+            (identical(other.order, order) || other.order == order));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, exercise);
+  int get hashCode => Object.hash(runtimeType, exercise, order);
 
   @override
   String toString() {
-    return 'SessionItem.exercise(exercise: $exercise)';
+    return 'SessionItem.exercise(exercise: $exercise, order: $order)';
   }
 }
 
@@ -73,9 +116,9 @@ abstract mixin class $ExerciseSessionItemCopyWith<$Res>
   factory $ExerciseSessionItemCopyWith(
           ExerciseSessionItem value, $Res Function(ExerciseSessionItem) _then) =
       _$ExerciseSessionItemCopyWithImpl;
-
+  @override
   @useResult
-  $Res call({Exercise exercise});
+  $Res call({Exercise exercise, int order});
 
   $ExerciseCopyWith<$Res> get exercise;
 }
@@ -90,15 +133,21 @@ class _$ExerciseSessionItemCopyWithImpl<$Res>
 
   /// Create a copy of SessionItem
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @pragma('vm:prefer-inline')
   $Res call({
     Object? exercise = null,
+    Object? order = null,
   }) {
     return _then(ExerciseSessionItem(
       exercise: null == exercise
           ? _self.exercise
           : exercise // ignore: cast_nullable_to_non_nullable
               as Exercise,
+      order: null == order
+          ? _self.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -116,12 +165,16 @@ class _$ExerciseSessionItemCopyWithImpl<$Res>
 /// @nodoc
 
 class RestSessionItem extends SessionItem {
-  const RestSessionItem({required this.restTime}) : super._();
+  const RestSessionItem({required this.restTime, required this.order})
+      : super._();
 
   final RestTime restTime;
+  @override
+  final int order;
 
   /// Create a copy of SessionItem
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $RestSessionItemCopyWith<RestSessionItem> get copyWith =>
@@ -133,15 +186,16 @@ class RestSessionItem extends SessionItem {
         (other.runtimeType == runtimeType &&
             other is RestSessionItem &&
             (identical(other.restTime, restTime) ||
-                other.restTime == restTime));
+                other.restTime == restTime) &&
+            (identical(other.order, order) || other.order == order));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, restTime);
+  int get hashCode => Object.hash(runtimeType, restTime, order);
 
   @override
   String toString() {
-    return 'SessionItem.rest(restTime: $restTime)';
+    return 'SessionItem.rest(restTime: $restTime, order: $order)';
   }
 }
 
@@ -151,9 +205,9 @@ abstract mixin class $RestSessionItemCopyWith<$Res>
   factory $RestSessionItemCopyWith(
           RestSessionItem value, $Res Function(RestSessionItem) _then) =
       _$RestSessionItemCopyWithImpl;
-
+  @override
   @useResult
-  $Res call({RestTime restTime});
+  $Res call({RestTime restTime, int order});
 
   $RestTimeCopyWith<$Res> get restTime;
 }
@@ -168,15 +222,21 @@ class _$RestSessionItemCopyWithImpl<$Res>
 
   /// Create a copy of SessionItem
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @pragma('vm:prefer-inline')
   $Res call({
     Object? restTime = null,
+    Object? order = null,
   }) {
     return _then(RestSessionItem(
       restTime: null == restTime
           ? _self.restTime
           : restTime // ignore: cast_nullable_to_non_nullable
               as RestTime,
+      order: null == order
+          ? _self.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 

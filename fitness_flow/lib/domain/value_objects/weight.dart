@@ -20,6 +20,8 @@ abstract class Weight with _$Weight {
       {required double value,
       @Default(WeightUnit.kg) WeightUnit unit}) = _Weight;
 
+  @override
   final double value;
+  @override
   final WeightUnit unit;
 }

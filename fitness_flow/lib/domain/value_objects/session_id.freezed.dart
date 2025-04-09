@@ -52,7 +52,6 @@ mixin _$SessionId implements DiagnosticableTreeMixin {
 abstract mixin class $SessionIdCopyWith<$Res> {
   factory $SessionIdCopyWith(SessionId value, $Res Function(SessionId) _then) =
       _$SessionIdCopyWithImpl;
-
   @useResult
   $Res call({String value});
 }
@@ -126,7 +125,6 @@ abstract mixin class _$SessionIdCopyWith<$Res>
   factory _$SessionIdCopyWith(
           _SessionId value, $Res Function(_SessionId) _then) =
       __$SessionIdCopyWithImpl;
-
   @override
   @useResult
   $Res call({String value});

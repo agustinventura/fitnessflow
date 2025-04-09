@@ -34,12 +34,14 @@ class EntityMother {
     );
   }
 
-  static SessionItem sessionItemExercise({Exercise? exercise}) {
-    return SessionItem.exercise(exercise: exercise ?? EntityMother.exercise());
+  static SessionItem sessionItemExercise({Exercise? exercise, int order = 1}) {
+    return SessionItem.exercise(
+        exercise: exercise ?? EntityMother.exercise(), order: order);
   }
 
-  static SessionItem sessionItemRest({RestTime? restTime}) {
-    return SessionItem.rest(restTime: restTime ?? ValueObjectMother.restTime());
+  static SessionItem sessionItemRest({RestTime? restTime, int order = 1}) {
+    return SessionItem.rest(
+        restTime: restTime ?? ValueObjectMother.restTime(), order: order);
   }
 
   static Session session({

@@ -16,15 +16,10 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Exercise {
   ExerciseId get id;
-
   String get name;
-
   TargetSeries get targetSeries;
-
   WorkoutGoal get goal;
-
   Weight? get weight;
-
   RestTime get restTime;
 
   /// Create a copy of Exercise
@@ -63,7 +58,6 @@ mixin _$Exercise {
 abstract mixin class $ExerciseCopyWith<$Res> {
   factory $ExerciseCopyWith(Exercise value, $Res Function(Exercise) _then) =
       _$ExerciseCopyWithImpl;
-
   @useResult
   $Res call(
       {ExerciseId id,
@@ -74,13 +68,9 @@ abstract mixin class $ExerciseCopyWith<$Res> {
       RestTime restTime});
 
   $ExerciseIdCopyWith<$Res> get id;
-
   $TargetSeriesCopyWith<$Res> get targetSeries;
-
   $WorkoutGoalCopyWith<$Res> get goal;
-
   $WeightCopyWith<$Res>? get weight;
-
   $RestTimeCopyWith<$Res> get restTime;
 }
 
@@ -249,7 +239,6 @@ abstract mixin class _$ExerciseCopyWith<$Res>
     implements $ExerciseCopyWith<$Res> {
   factory _$ExerciseCopyWith(_Exercise value, $Res Function(_Exercise) _then) =
       __$ExerciseCopyWithImpl;
-
   @override
   @useResult
   $Res call(
@@ -262,16 +251,12 @@ abstract mixin class _$ExerciseCopyWith<$Res>
 
   @override
   $ExerciseIdCopyWith<$Res> get id;
-
   @override
   $TargetSeriesCopyWith<$Res> get targetSeries;
-
   @override
   $WorkoutGoalCopyWith<$Res> get goal;
-
   @override
   $WeightCopyWith<$Res>? get weight;
-
   @override
   $RestTimeCopyWith<$Res> get restTime;
 }

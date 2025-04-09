@@ -52,7 +52,6 @@ mixin _$RoutineId implements DiagnosticableTreeMixin {
 abstract mixin class $RoutineIdCopyWith<$Res> {
   factory $RoutineIdCopyWith(RoutineId value, $Res Function(RoutineId) _then) =
       _$RoutineIdCopyWithImpl;
-
   @useResult
   $Res call({String value});
 }
@@ -126,7 +125,6 @@ abstract mixin class _$RoutineIdCopyWith<$Res>
   factory _$RoutineIdCopyWith(
           _RoutineId value, $Res Function(_RoutineId) _then) =
       __$RoutineIdCopyWithImpl;
-
   @override
   @useResult
   $Res call({String value});

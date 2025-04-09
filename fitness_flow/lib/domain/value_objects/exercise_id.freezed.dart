@@ -53,7 +53,6 @@ abstract mixin class $ExerciseIdCopyWith<$Res> {
   factory $ExerciseIdCopyWith(
           ExerciseId value, $Res Function(ExerciseId) _then) =
       _$ExerciseIdCopyWithImpl;
-
   @useResult
   $Res call({String value});
 }
@@ -127,7 +126,6 @@ abstract mixin class _$ExerciseIdCopyWith<$Res>
   factory _$ExerciseIdCopyWith(
           _ExerciseId value, $Res Function(_ExerciseId) _then) =
       __$ExerciseIdCopyWithImpl;
-
   @override
   @useResult
   $Res call({String value});
