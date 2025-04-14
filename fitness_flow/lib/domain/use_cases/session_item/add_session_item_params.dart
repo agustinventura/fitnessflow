@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'add_exercise_params.dart';
+import '../exercise/add_exercise_params.dart';
 import 'add_rest_params.dart';
 
 part 'add_session_item_params.freezed.dart';

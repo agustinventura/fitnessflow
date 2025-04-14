@@ -1,6 +1,6 @@
 import 'package:fitness_flow/domain/use_cases/routine/add_routine_params.dart';
 import 'package:fitness_flow/domain/use_cases/session/add_session_params.dart';
-import 'package:fitness_flow/domain/use_cases/session_item/add_exercise_params.dart';
+import 'package:fitness_flow/domain/use_cases/exercise/add_exercise_params.dart';
 import 'package:fitness_flow/domain/use_cases/session_item/add_rest_params.dart';
 import 'package:fitness_flow/domain/use_cases/session_item/add_session_item_params.dart';
 import 'package:fitness_flow/domain/value_objects/workout_unit.dart';

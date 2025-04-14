@@ -1,4 +1,4 @@
-import 'package:fitness_flow/domain/use_cases/session_item/add_exercise_params.dart';
+import 'package:fitness_flow/domain/use_cases/exercise/add_exercise_params.dart';
 import 'package:fitness_flow/domain/value_objects/workout_unit.dart';
 import 'package:flutter_test/flutter_test.dart';
 
