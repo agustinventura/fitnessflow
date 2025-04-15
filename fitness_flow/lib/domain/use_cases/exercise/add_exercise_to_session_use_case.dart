@@ -59,11 +59,11 @@ class AddExerciseToSessionUseCase {
     final targetSession = routine.sessions[sessionIndex];
 
     try {
-      Exercise newExercise = _buildExerciseFromParams(params);
-      Session updatedSession =
+      final newExercise = _buildExerciseFromParams(params);
+      final updatedSession =
           _buildNewSessionWithNewExercise(targetSession, newExercise);
-      Routine modifiedRoutine =
-          _buildRoutineWithUpdatedSessions(routine, params, updatedSession);
+      final modifiedRoutine =
+          _buildNewRoutineWithUpdatedSessions(routine, params, updatedSession);
 
       return Right(modifiedRoutine);
     } on AssertionError catch (e) {
@@ -73,7 +73,7 @@ class AddExerciseToSessionUseCase {
     }
   }
 
-  Routine _buildRoutineWithUpdatedSessions(Routine routine,
+  Routine _buildNewRoutineWithUpdatedSessions(Routine routine,
       AddExerciseToSessionParams params, Session updatedSession) {
     final updatedSessions = routine.sessions.map((session) {
       return session.id == params.sessionId ? updatedSession : session;
