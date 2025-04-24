@@ -1,4 +1,4 @@
-import 'package:fitness_flow/domain/use_cases/session/add_session_params.dart';
+import 'package:fitness_flow/domain/use_cases/session/session_params.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:uuid/uuid.dart';
 
@@ -15,8 +15,8 @@ import '../../value_objects/session_id.dart';
 import '../../value_objects/target_series.dart';
 import '../../value_objects/weight.dart';
 import '../../value_objects/workout_goal.dart';
-import '../session_item/add_session_item_params.dart';
-import 'add_routine_params.dart';
+import '../session_item/dtos/session_item_params.dart';
+import 'dtos/routine_params.dart';
 
 class AddRoutineUseCase {
   final RoutineRepository repository;
@@ -24,7 +24,7 @@ class AddRoutineUseCase {
 
   AddRoutineUseCase(this.repository, this.uuidGenerator);
 
-  Future<Either<Failure, Unit>> call(AddRoutineParams params) async {
+  Future<Either<Failure, Unit>> call(RoutineParams params) async {
     try {
       final newRoutineId = RoutineId(uuidGenerator.v4());
 
@@ -45,7 +45,7 @@ class AddRoutineUseCase {
     }
   }
 
-  List<Session> _createSessionsFromParams(AddRoutineParams params) {
+  List<Session> _createSessionsFromParams(RoutineParams params) {
     final List<Session> sessions = [];
     if (params.initialSessions != null) {
       int sessionOrder = 1;
@@ -65,8 +65,7 @@ class AddRoutineUseCase {
     return sessions;
   }
 
-  List<SessionItem> _createSessionItemsFromParams(
-      AddSessionParams sessionParam) {
+  List<SessionItem> _createSessionItemsFromParams(SessionParams sessionParam) {
     final List<SessionItem> sessionItems = [];
     int itemOrder = 1;
     for (final itemParam in sessionParam.items) {

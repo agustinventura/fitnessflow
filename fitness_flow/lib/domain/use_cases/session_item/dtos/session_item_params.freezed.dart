@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_session_item_params.dart';
+part of 'session_item_params.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,14 +14,14 @@ part of 'add_session_item_params.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AddSessionItemParams {
+mixin _$SessionItemParams {
   Object get params;
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AddSessionItemParams &&
+            other is SessionItemParams &&
             const DeepCollectionEquality().equals(other.params, params));
   }
 
@@ -31,25 +31,25 @@ mixin _$AddSessionItemParams {
 
   @override
   String toString() {
-    return 'AddSessionItemParams(params: $params)';
+    return 'SessionItemParams(params: $params)';
   }
 }
 
 /// @nodoc
-class $AddSessionItemParamsCopyWith<$Res> {
-  $AddSessionItemParamsCopyWith(
-      AddSessionItemParams _, $Res Function(AddSessionItemParams) __);
+class $SessionItemParamsCopyWith<$Res> {
+  $SessionItemParamsCopyWith(
+      SessionItemParams _, $Res Function(SessionItemParams) __);
 }
 
 /// @nodoc
 
-class ExerciseSessionItemParams implements AddSessionItemParams {
+class ExerciseSessionItemParams implements SessionItemParams {
   const ExerciseSessionItemParams({required this.params});
 
   @override
-  final AddExerciseParams params;
+  final ExerciseParams params;
 
-  /// Create a copy of AddSessionItemParams
+  /// Create a copy of SessionItemParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
@@ -70,20 +70,20 @@ class ExerciseSessionItemParams implements AddSessionItemParams {
 
   @override
   String toString() {
-    return 'AddSessionItemParams.exercise(params: $params)';
+    return 'SessionItemParams.exercise(params: $params)';
   }
 }
 
 /// @nodoc
 abstract mixin class $ExerciseSessionItemParamsCopyWith<$Res>
-    implements $AddSessionItemParamsCopyWith<$Res> {
+    implements $SessionItemParamsCopyWith<$Res> {
   factory $ExerciseSessionItemParamsCopyWith(ExerciseSessionItemParams value,
           $Res Function(ExerciseSessionItemParams) _then) =
       _$ExerciseSessionItemParamsCopyWithImpl;
   @useResult
-  $Res call({AddExerciseParams params});
+  $Res call({ExerciseParams params});
 
-  $AddExerciseParamsCopyWith<$Res> get params;
+  $ExerciseParamsCopyWith<$Res> get params;
 }
 
 /// @nodoc
@@ -94,7 +94,7 @@ class _$ExerciseSessionItemParamsCopyWithImpl<$Res>
   final ExerciseSessionItemParams _self;
   final $Res Function(ExerciseSessionItemParams) _then;
 
-  /// Create a copy of AddSessionItemParams
+  /// Create a copy of SessionItemParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   $Res call({
@@ -104,16 +104,16 @@ class _$ExerciseSessionItemParamsCopyWithImpl<$Res>
       params: null == params
           ? _self.params
           : params // ignore: cast_nullable_to_non_nullable
-              as AddExerciseParams,
+              as ExerciseParams,
     ));
   }
 
-  /// Create a copy of AddSessionItemParams
+  /// Create a copy of SessionItemParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AddExerciseParamsCopyWith<$Res> get params {
-    return $AddExerciseParamsCopyWith<$Res>(_self.params, (value) {
+  $ExerciseParamsCopyWith<$Res> get params {
+    return $ExerciseParamsCopyWith<$Res>(_self.params, (value) {
       return _then(_self.copyWith(params: value));
     });
   }
@@ -121,13 +121,13 @@ class _$ExerciseSessionItemParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class RestSessionItemParams implements AddSessionItemParams {
+class RestSessionItemParams implements SessionItemParams {
   const RestSessionItemParams({required this.params});
 
   @override
-  final AddRestParams params;
+  final RestParams params;
 
-  /// Create a copy of AddSessionItemParams
+  /// Create a copy of SessionItemParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
@@ -148,20 +148,20 @@ class RestSessionItemParams implements AddSessionItemParams {
 
   @override
   String toString() {
-    return 'AddSessionItemParams.rest(params: $params)';
+    return 'SessionItemParams.rest(params: $params)';
   }
 }
 
 /// @nodoc
 abstract mixin class $RestSessionItemParamsCopyWith<$Res>
-    implements $AddSessionItemParamsCopyWith<$Res> {
+    implements $SessionItemParamsCopyWith<$Res> {
   factory $RestSessionItemParamsCopyWith(RestSessionItemParams value,
           $Res Function(RestSessionItemParams) _then) =
       _$RestSessionItemParamsCopyWithImpl;
   @useResult
-  $Res call({AddRestParams params});
+  $Res call({RestParams params});
 
-  $AddRestParamsCopyWith<$Res> get params;
+  $RestParamsCopyWith<$Res> get params;
 }
 
 /// @nodoc
@@ -172,7 +172,7 @@ class _$RestSessionItemParamsCopyWithImpl<$Res>
   final RestSessionItemParams _self;
   final $Res Function(RestSessionItemParams) _then;
 
-  /// Create a copy of AddSessionItemParams
+  /// Create a copy of SessionItemParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   $Res call({
@@ -182,16 +182,16 @@ class _$RestSessionItemParamsCopyWithImpl<$Res>
       params: null == params
           ? _self.params
           : params // ignore: cast_nullable_to_non_nullable
-              as AddRestParams,
+              as RestParams,
     ));
   }
 
-  /// Create a copy of AddSessionItemParams
+  /// Create a copy of SessionItemParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AddRestParamsCopyWith<$Res> get params {
-    return $AddRestParamsCopyWith<$Res>(_self.params, (value) {
+  $RestParamsCopyWith<$Res> get params {
+    return $RestParamsCopyWith<$Res>(_self.params, (value) {
       return _then(_self.copyWith(params: value));
     });
   }

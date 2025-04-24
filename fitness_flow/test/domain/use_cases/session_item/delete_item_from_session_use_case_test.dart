@@ -2,23 +2,17 @@ import 'package:fitness_flow/core/error/failure.dart';
 import 'package:fitness_flow/domain/entities/routine.dart';
 import 'package:fitness_flow/domain/entities/session_item.dart';
 import 'package:fitness_flow/domain/repositories/routine_repository.dart';
-import 'package:fitness_flow/domain/use_cases/exercise/add_exercise_to_session_params.dart';
-import 'package:fitness_flow/domain/use_cases/exercise/add_exercise_to_session_use_case.dart';
-import 'package:fitness_flow/domain/value_objects/exercise_id.dart';
+import 'package:fitness_flow/domain/use_cases/session_item/delete_item_from_session_use_case.dart';
+import 'package:fitness_flow/domain/use_cases/session_item/dtos/delete_item_from_session_params.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:uuid/uuid.dart';
 
 import '../../entities/mother/entity_mother.dart';
 import '../../value_objects/mother/value_object_mother.dart';
-import '../mother/dto_mother.dart';
-@GenerateNiceMocks([
-  MockSpec<RoutineRepository>(),
-  MockSpec<Uuid>(),
-])
-import 'add_exercise_to_session_use_case_test.mocks.dart';
+@GenerateNiceMocks([MockSpec<RoutineRepository>()])
+import 'delete_item_from_session_use_case_test.mocks.dart';
 
 void main() {
   setUpAll(() {
@@ -26,53 +20,49 @@ void main() {
     provideDummy<Either<Failure, Routine>>(Right(EntityMother.routine()));
   });
 
-  late AddExerciseToSessionUseCase useCase;
+  late DeleteItemFromSessionUseCase useCase;
   late MockRoutineRepository mockRoutineRepository;
-  late MockUuid mockUuid;
 
   setUp(() {
     mockRoutineRepository = MockRoutineRepository();
-    mockUuid = MockUuid();
-    useCase = AddExerciseToSessionUseCase(mockRoutineRepository, mockUuid);
+    useCase = DeleteItemFromSessionUseCase(mockRoutineRepository);
   });
 
   final tRoutineId = ValueObjectMother.routineId(value: 'r1');
   final tSessionId = ValueObjectMother.sessionId(value: 's1');
-  final tNewExerciseParams = DtoMother.addExerciseParams(name: 'New Leg Curl');
-  const tGeneratedExerciseUuid = 'new-exercise-uuid';
-  final tNewExerciseId = ExerciseId(tGeneratedExerciseUuid);
+  const tOrderToDelete = 2;
+  const tInvalidOrder = 99;
 
-  final tInitialSession = EntityMother.session(id: tSessionId, items: [
-    EntityMother.sessionItemExercise(
-        order: 1,
-        exercise: EntityMother.exercise(id: ValueObjectMother.exerciseId()))
-  ]);
+  final tItem1 = EntityMother.sessionItemExercise(
+      order: 1,
+      exercise: EntityMother.exercise(
+          id: ValueObjectMother.exerciseId(value: 'ex1')));
+  final tItem2 = EntityMother.sessionItemRest(
+      order: 2, restTime: ValueObjectMother.restTime(durationInSeconds: 60));
+  final tItem3 = EntityMother.sessionItemExercise(
+      order: 3,
+      exercise: EntityMother.exercise(
+          id: ValueObjectMother.exerciseId(value: 'ex2')));
+  final tInitialSession =
+      EntityMother.session(id: tSessionId, items: [tItem1, tItem2, tItem3]);
   final tInitialRoutine =
       EntityMother.routine(id: tRoutineId, sessions: [tInitialSession]);
 
   const tRoutineNotFoundFailure = Failure.notFound('Routine not found');
   const tSessionNotFoundFailure =
       Failure.notFound('Session not found in routine');
+  const tItemNotFoundFailure =
+      Failure.notFound('Item with order $tInvalidOrder not found in session');
   const tDatabaseFailure = Failure.database();
 
-  final tParams = AddExerciseToSessionParams(
-      routineId: tRoutineId,
-      sessionId: tSessionId,
-      exerciseParams: tNewExerciseParams);
-
-  final tInvalidExerciseParamsDto =
-      DtoMother.addExerciseParams(targetSeriesCount: -1);
-  final tInvalidParams = AddExerciseToSessionParams(
-      routineId: tRoutineId,
-      sessionId: tSessionId,
-      exerciseParams: tInvalidExerciseParamsDto);
+  final tParams = DeleteItemFromSessionParams(
+      routineId: tRoutineId, sessionId: tSessionId, itemOrder: tOrderToDelete);
 
   test(
-    'should load routine, convert dto, add exercise item, and return updated Routine on success',
+    'should load routine, remove item by order, reorder remaining items, and return updated Routine on success',
     () async {
       when(mockRoutineRepository.findById(tRoutineId))
           .thenAnswer((_) async => Right(tInitialRoutine));
-      when(mockUuid.v4()).thenReturn(tGeneratedExerciseUuid);
 
       final result = await useCase(tParams);
 
@@ -81,22 +71,24 @@ void main() {
           result.getOrElse((_) => throw TestFailure('Should be Right'));
 
       verify(mockRoutineRepository.findById(tRoutineId));
-      verify(mockUuid.v4()).called(1);
       verifyNoMoreInteractions(mockRoutineRepository);
-      verifyNoMoreInteractions(mockUuid);
 
       expect(updatedRoutine.id, tRoutineId);
       expect(updatedRoutine.sessions.length, 1);
       final modifiedSession =
           updatedRoutine.sessions.firstWhere((s) => s.id == tSessionId);
-      expect(modifiedSession.items.length, 2);
 
-      final newItem = modifiedSession.items.last;
-      expect(newItem, isA<ExerciseSessionItem>());
-      expect(newItem.order, 2);
-      final newExerciseItem = newItem as ExerciseSessionItem;
-      expect(newExerciseItem.exercise.id, tNewExerciseId);
-      expect(newExerciseItem.exercise.name, tNewExerciseParams.name);
+      expect(modifiedSession.items.length, 2);
+      expect(modifiedSession.items.any((item) => item == tItem2), isFalse);
+      expect(modifiedSession.items[0].order, 1);
+      expect(modifiedSession.items[0], isA<ExerciseSessionItem>());
+      expect((modifiedSession.items[0] as ExerciseSessionItem).exercise.id,
+          equals((tItem1 as ExerciseSessionItem).exercise.id));
+
+      expect(modifiedSession.items[1].order, 2);
+      expect(modifiedSession.items[1], isA<ExerciseSessionItem>());
+      expect((modifiedSession.items[1] as ExerciseSessionItem).exercise.id,
+          equals((tItem3 as ExerciseSessionItem).exercise.id));
     },
   );
 
@@ -110,7 +102,6 @@ void main() {
 
       expect(result, equals(const Left(tRoutineNotFoundFailure)));
       verify(mockRoutineRepository.findById(tRoutineId));
-      verifyNever(mockUuid.v4());
       verifyNoMoreInteractions(mockRoutineRepository);
     },
   );
@@ -118,17 +109,34 @@ void main() {
   test(
     'should return NotFoundFailure when session is not found within the routine',
     () async {
-      final wrongSessionId = ValueObjectMother.sessionId(value: 's-wrong');
-      final paramsWithWrongSession =
-          tParams.copyWith(sessionId: wrongSessionId);
+      final routineWithDifferentSession = EntityMother.routine(
+          id: tRoutineId,
+          sessions: [
+            EntityMother.session(
+                id: ValueObjectMother.sessionId(value: 'other-session-id'))
+          ]);
       when(mockRoutineRepository.findById(tRoutineId))
-          .thenAnswer((_) async => Right(tInitialRoutine));
+          .thenAnswer((_) async => Right(routineWithDifferentSession));
 
-      final result = await useCase(paramsWithWrongSession);
+      final result = await useCase(tParams);
 
       expect(result, equals(const Left(tSessionNotFoundFailure)));
       verify(mockRoutineRepository.findById(tRoutineId));
-      verifyNever(mockUuid.v4());
+      verifyNoMoreInteractions(mockRoutineRepository);
+    },
+  );
+
+  test(
+    'should return NotFoundFailure when item with specified order is not found within the session',
+    () async {
+      when(mockRoutineRepository.findById(tRoutineId))
+          .thenAnswer((_) async => Right(tInitialRoutine));
+      final paramsWithWrongOrder = tParams.copyWith(itemOrder: tInvalidOrder);
+
+      final result = await useCase(paramsWithWrongOrder);
+
+      expect(result, equals(const Left(tItemNotFoundFailure)));
+      verify(mockRoutineRepository.findById(tRoutineId));
       verifyNoMoreInteractions(mockRoutineRepository);
     },
   );
@@ -142,26 +150,6 @@ void main() {
       final result = await useCase(tParams);
 
       expect(result, equals(const Left(tDatabaseFailure)));
-      verify(mockRoutineRepository.findById(tRoutineId));
-      verifyNever(mockUuid.v4());
-      verifyNoMoreInteractions(mockRoutineRepository);
-    },
-  );
-
-  test(
-    'should return Failure when creating Value Objects from DTO fails',
-    () async {
-      when(mockRoutineRepository.findById(tRoutineId))
-          .thenAnswer((_) async => Right(tInitialRoutine));
-      when(mockUuid.v4()).thenReturn(tGeneratedExerciseUuid);
-
-      final result = await useCase(tInvalidParams);
-
-      expect(result.isLeft(), isTrue);
-      result.fold(
-        (failure) => expect(failure, isA<Failure>()),
-        (_) => fail('Should have returned a Failure'),
-      );
       verify(mockRoutineRepository.findById(tRoutineId));
       verifyNoMoreInteractions(mockRoutineRepository);
     },

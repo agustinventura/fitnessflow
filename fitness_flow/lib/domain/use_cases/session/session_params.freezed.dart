@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_session_params.dart';
+part of 'session_params.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,23 +14,23 @@ part of 'add_session_params.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AddSessionParams {
+mixin _$SessionParams {
   String get name;
-  List<AddSessionItemParams> get items;
+  List<SessionItemParams> get items;
 
-  /// Create a copy of AddSessionParams
+  /// Create a copy of SessionParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AddSessionParamsCopyWith<AddSessionParams> get copyWith =>
-      _$AddSessionParamsCopyWithImpl<AddSessionParams>(
-          this as AddSessionParams, _$identity);
+  $SessionParamsCopyWith<SessionParams> get copyWith =>
+      _$SessionParamsCopyWithImpl<SessionParams>(
+          this as SessionParams, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AddSessionParams &&
+            other is SessionParams &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other.items, items));
   }
@@ -41,28 +41,28 @@ mixin _$AddSessionParams {
 
   @override
   String toString() {
-    return 'AddSessionParams(name: $name, items: $items)';
+    return 'SessionParams(name: $name, items: $items)';
   }
 }
 
 /// @nodoc
-abstract mixin class $AddSessionParamsCopyWith<$Res> {
-  factory $AddSessionParamsCopyWith(
-          AddSessionParams value, $Res Function(AddSessionParams) _then) =
-      _$AddSessionParamsCopyWithImpl;
+abstract mixin class $SessionParamsCopyWith<$Res> {
+  factory $SessionParamsCopyWith(
+          SessionParams value, $Res Function(SessionParams) _then) =
+      _$SessionParamsCopyWithImpl;
   @useResult
-  $Res call({String name, List<AddSessionItemParams> items});
+  $Res call({String name, List<SessionItemParams> items});
 }
 
 /// @nodoc
-class _$AddSessionParamsCopyWithImpl<$Res>
-    implements $AddSessionParamsCopyWith<$Res> {
-  _$AddSessionParamsCopyWithImpl(this._self, this._then);
+class _$SessionParamsCopyWithImpl<$Res>
+    implements $SessionParamsCopyWith<$Res> {
+  _$SessionParamsCopyWithImpl(this._self, this._then);
 
-  final AddSessionParams _self;
-  final $Res Function(AddSessionParams) _then;
+  final SessionParams _self;
+  final $Res Function(SessionParams) _then;
 
-  /// Create a copy of AddSessionParams
+  /// Create a copy of SessionParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -78,29 +78,29 @@ class _$AddSessionParamsCopyWithImpl<$Res>
       items: null == items
           ? _self.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<AddSessionItemParams>,
+              as List<SessionItemParams>,
     ));
   }
 }
 
 /// @nodoc
 
-class _AddSessionParams implements AddSessionParams {
+class _AddSessionParams implements SessionParams {
   const _AddSessionParams(
-      {required this.name, required final List<AddSessionItemParams> items})
+      {required this.name, required final List<SessionItemParams> items})
       : _items = items;
 
   @override
   final String name;
-  final List<AddSessionItemParams> _items;
+  final List<SessionItemParams> _items;
   @override
-  List<AddSessionItemParams> get items {
+  List<SessionItemParams> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_items);
   }
 
-  /// Create a copy of AddSessionParams
+  /// Create a copy of SessionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -123,19 +123,19 @@ class _AddSessionParams implements AddSessionParams {
 
   @override
   String toString() {
-    return 'AddSessionParams(name: $name, items: $items)';
+    return 'SessionParams(name: $name, items: $items)';
   }
 }
 
 /// @nodoc
 abstract mixin class _$AddSessionParamsCopyWith<$Res>
-    implements $AddSessionParamsCopyWith<$Res> {
+    implements $SessionParamsCopyWith<$Res> {
   factory _$AddSessionParamsCopyWith(
           _AddSessionParams value, $Res Function(_AddSessionParams) _then) =
       __$AddSessionParamsCopyWithImpl;
   @override
   @useResult
-  $Res call({String name, List<AddSessionItemParams> items});
+  $Res call({String name, List<SessionItemParams> items});
 }
 
 /// @nodoc
@@ -146,7 +146,7 @@ class __$AddSessionParamsCopyWithImpl<$Res>
   final _AddSessionParams _self;
   final $Res Function(_AddSessionParams) _then;
 
-  /// Create a copy of AddSessionParams
+  /// Create a copy of SessionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -162,7 +162,7 @@ class __$AddSessionParamsCopyWithImpl<$Res>
       items: null == items
           ? _self._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<AddSessionItemParams>,
+              as List<SessionItemParams>,
     ));
   }
 }

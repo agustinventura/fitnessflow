@@ -1,10 +1,10 @@
-import 'package:fitness_flow/domain/use_cases/session/add_session_params.dart';
+import 'package:fitness_flow/domain/use_cases/session/session_params.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../mother/dto_mother.dart';
 
 void main() {
-  group('AddSessionParams Data Class', () {
+  group('SessionParams Data Class', () {
     const tSessionName = 'Push Day';
     final tExerciseParam1 =
         DtoMother.addExerciseSessionItemParams(name: 'Bench Press');
@@ -12,7 +12,7 @@ void main() {
         DtoMother.addExerciseSessionItemParams(name: 'Overhead Press');
 
     test('should create instance successfully with required fields', () {
-      final params = AddSessionParams(
+      final params = SessionParams(
         name: tSessionName,
         items: [tExerciseParam1, tExerciseParam2],
       );
@@ -25,7 +25,7 @@ void main() {
 
     test('should create instance successfully with empty session_item list',
         () {
-      final params = AddSessionParams(
+      final params = SessionParams(
         name: tSessionName,
         items: [],
       );
@@ -37,9 +37,9 @@ void main() {
 
     test('should support value equality', () {
       final params1 =
-          AddSessionParams(name: tSessionName, items: [tExerciseParam1]);
+          SessionParams(name: tSessionName, items: [tExerciseParam1]);
       final params2 =
-          AddSessionParams(name: tSessionName, items: [tExerciseParam1]);
+          SessionParams(name: tSessionName, items: [tExerciseParam1]);
 
       expect(params1, equals(params2));
       expect(params1.hashCode, equals(params2.hashCode));
@@ -47,15 +47,14 @@ void main() {
 
     test('should have distinct inequality when props differ', () {
       final paramsBase =
-          AddSessionParams(name: tSessionName, items: [tExerciseParam1]);
+          SessionParams(name: tSessionName, items: [tExerciseParam1]);
       final paramsDiffName =
-          AddSessionParams(name: 'Pull Day', items: [tExerciseParam1]);
+          SessionParams(name: 'Pull Day', items: [tExerciseParam1]);
       final paramsDiffListContent =
-          AddSessionParams(name: tSessionName, items: [tExerciseParam2]);
-      final paramsDiffListOrder = AddSessionParams(
+          SessionParams(name: tSessionName, items: [tExerciseParam2]);
+      final paramsDiffListOrder = SessionParams(
           name: tSessionName, items: [tExerciseParam2, tExerciseParam1]);
-      final paramsDiffListLength =
-          AddSessionParams(name: tSessionName, items: []);
+      final paramsDiffListLength = SessionParams(name: tSessionName, items: []);
 
       expect(paramsBase, isNot(equals(paramsDiffName)));
       expect(paramsBase, isNot(equals(paramsDiffListContent)));
@@ -65,7 +64,7 @@ void main() {
 
     test('copyWith should create a copy with updated values correctly', () {
       final originalParams =
-          AddSessionParams(name: tSessionName, items: [tExerciseParam1]);
+          SessionParams(name: tSessionName, items: [tExerciseParam1]);
       final newExercises = [tExerciseParam1, tExerciseParam2];
 
       final updatedParamsName = originalParams.copyWith(name: 'Heavy Push Day');

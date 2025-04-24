@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_exercise_params.dart';
+part of 'exercise_params.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,7 +14,7 @@ part of 'add_exercise_params.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AddExerciseParams {
+mixin _$ExerciseParams {
   String get name;
   int get targetSeriesCount;
   int get goalQuantity;
@@ -22,19 +22,19 @@ mixin _$AddExerciseParams {
   double? get weightValue;
   int get restTimeInSeconds;
 
-  /// Create a copy of AddExerciseParams
+  /// Create a copy of ExerciseParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AddExerciseParamsCopyWith<AddExerciseParams> get copyWith =>
-      _$AddExerciseParamsCopyWithImpl<AddExerciseParams>(
-          this as AddExerciseParams, _$identity);
+  $ExerciseParamsCopyWith<ExerciseParams> get copyWith =>
+      _$ExerciseParamsCopyWithImpl<ExerciseParams>(
+          this as ExerciseParams, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AddExerciseParams &&
+            other is ExerciseParams &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.targetSeriesCount, targetSeriesCount) ||
                 other.targetSeriesCount == targetSeriesCount) &&
@@ -54,15 +54,15 @@ mixin _$AddExerciseParams {
 
   @override
   String toString() {
-    return 'AddExerciseParams(name: $name, targetSeriesCount: $targetSeriesCount, goalQuantity: $goalQuantity, goalUnit: $goalUnit, weightValue: $weightValue, restTimeInSeconds: $restTimeInSeconds)';
+    return 'ExerciseParams(name: $name, targetSeriesCount: $targetSeriesCount, goalQuantity: $goalQuantity, goalUnit: $goalUnit, weightValue: $weightValue, restTimeInSeconds: $restTimeInSeconds)';
   }
 }
 
 /// @nodoc
-abstract mixin class $AddExerciseParamsCopyWith<$Res> {
-  factory $AddExerciseParamsCopyWith(
-          AddExerciseParams value, $Res Function(AddExerciseParams) _then) =
-      _$AddExerciseParamsCopyWithImpl;
+abstract mixin class $ExerciseParamsCopyWith<$Res> {
+  factory $ExerciseParamsCopyWith(
+          ExerciseParams value, $Res Function(ExerciseParams) _then) =
+      _$ExerciseParamsCopyWithImpl;
   @useResult
   $Res call(
       {String name,
@@ -74,14 +74,14 @@ abstract mixin class $AddExerciseParamsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AddExerciseParamsCopyWithImpl<$Res>
-    implements $AddExerciseParamsCopyWith<$Res> {
-  _$AddExerciseParamsCopyWithImpl(this._self, this._then);
+class _$ExerciseParamsCopyWithImpl<$Res>
+    implements $ExerciseParamsCopyWith<$Res> {
+  _$ExerciseParamsCopyWithImpl(this._self, this._then);
 
-  final AddExerciseParams _self;
-  final $Res Function(AddExerciseParams) _then;
+  final ExerciseParams _self;
+  final $Res Function(ExerciseParams) _then;
 
-  /// Create a copy of AddExerciseParams
+  /// Create a copy of ExerciseParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -124,8 +124,8 @@ class _$AddExerciseParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _AddExerciseParams implements AddExerciseParams {
-  const _AddExerciseParams(
+class _ExerciseParams implements ExerciseParams {
+  const _ExerciseParams(
       {required this.name,
       required this.targetSeriesCount,
       required this.goalQuantity,
@@ -146,19 +146,19 @@ class _AddExerciseParams implements AddExerciseParams {
   @override
   final int restTimeInSeconds;
 
-  /// Create a copy of AddExerciseParams
+  /// Create a copy of ExerciseParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AddExerciseParamsCopyWith<_AddExerciseParams> get copyWith =>
-      __$AddExerciseParamsCopyWithImpl<_AddExerciseParams>(this, _$identity);
+  _$ExerciseParamsCopyWith<_ExerciseParams> get copyWith =>
+      __$ExerciseParamsCopyWithImpl<_ExerciseParams>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AddExerciseParams &&
+            other is _ExerciseParams &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.targetSeriesCount, targetSeriesCount) ||
                 other.targetSeriesCount == targetSeriesCount) &&
@@ -178,16 +178,16 @@ class _AddExerciseParams implements AddExerciseParams {
 
   @override
   String toString() {
-    return 'AddExerciseParams(name: $name, targetSeriesCount: $targetSeriesCount, goalQuantity: $goalQuantity, goalUnit: $goalUnit, weightValue: $weightValue, restTimeInSeconds: $restTimeInSeconds)';
+    return 'ExerciseParams(name: $name, targetSeriesCount: $targetSeriesCount, goalQuantity: $goalQuantity, goalUnit: $goalUnit, weightValue: $weightValue, restTimeInSeconds: $restTimeInSeconds)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$AddExerciseParamsCopyWith<$Res>
-    implements $AddExerciseParamsCopyWith<$Res> {
-  factory _$AddExerciseParamsCopyWith(
-          _AddExerciseParams value, $Res Function(_AddExerciseParams) _then) =
-      __$AddExerciseParamsCopyWithImpl;
+abstract mixin class _$ExerciseParamsCopyWith<$Res>
+    implements $ExerciseParamsCopyWith<$Res> {
+  factory _$ExerciseParamsCopyWith(
+          _ExerciseParams value, $Res Function(_ExerciseParams) _then) =
+      __$ExerciseParamsCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -200,14 +200,14 @@ abstract mixin class _$AddExerciseParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AddExerciseParamsCopyWithImpl<$Res>
-    implements _$AddExerciseParamsCopyWith<$Res> {
-  __$AddExerciseParamsCopyWithImpl(this._self, this._then);
+class __$ExerciseParamsCopyWithImpl<$Res>
+    implements _$ExerciseParamsCopyWith<$Res> {
+  __$ExerciseParamsCopyWithImpl(this._self, this._then);
 
-  final _AddExerciseParams _self;
-  final $Res Function(_AddExerciseParams) _then;
+  final _ExerciseParams _self;
+  final $Res Function(_ExerciseParams) _then;
 
-  /// Create a copy of AddExerciseParams
+  /// Create a copy of ExerciseParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -219,7 +219,7 @@ class __$AddExerciseParamsCopyWithImpl<$Res>
     Object? weightValue = freezed,
     Object? restTimeInSeconds = null,
   }) {
-    return _then(_AddExerciseParams(
+    return _then(_ExerciseParams(
       name: null == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable

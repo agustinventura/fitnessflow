@@ -44,14 +44,14 @@ void main() {
   const tEx1Uuid = 'ex1-uuid';
   const tEx2Uuid = 'ex2-uuid';
 
-  final tParamsWithMixedItems = DtoMother.addRoutineParamsWithMixedItems(
+  final tParamsWithMixedItems = DtoMother.routineParamsWithMixedItems(
       routineName: tRoutineName,
       sessionName: tSession1Name,
       firsExerciseName: tEx1Name,
       secondExerciseName: tEx2Name,
       restDuration: tRest1Duration);
 
-  final tParamsEmpty = DtoMother.addRoutineParamsEmpty(name: 'Empty Routine');
+  final tParamsEmpty = DtoMother.routineParamsEmpty(name: 'Empty Routine');
 
   const tSaveFailure = Failure.database();
 

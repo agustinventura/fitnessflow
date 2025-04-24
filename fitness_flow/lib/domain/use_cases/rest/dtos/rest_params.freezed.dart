@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_rest_params.dart';
+part of 'rest_params.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,22 +14,21 @@ part of 'add_rest_params.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AddRestParams {
+mixin _$RestParams {
   int get durationInSeconds;
 
-  /// Create a copy of AddRestParams
+  /// Create a copy of RestParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AddRestParamsCopyWith<AddRestParams> get copyWith =>
-      _$AddRestParamsCopyWithImpl<AddRestParams>(
-          this as AddRestParams, _$identity);
+  $RestParamsCopyWith<RestParams> get copyWith =>
+      _$RestParamsCopyWithImpl<RestParams>(this as RestParams, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AddRestParams &&
+            other is RestParams &&
             (identical(other.durationInSeconds, durationInSeconds) ||
                 other.durationInSeconds == durationInSeconds));
   }
@@ -39,28 +38,27 @@ mixin _$AddRestParams {
 
   @override
   String toString() {
-    return 'AddRestParams(durationInSeconds: $durationInSeconds)';
+    return 'RestParams(durationInSeconds: $durationInSeconds)';
   }
 }
 
 /// @nodoc
-abstract mixin class $AddRestParamsCopyWith<$Res> {
-  factory $AddRestParamsCopyWith(
-          AddRestParams value, $Res Function(AddRestParams) _then) =
-      _$AddRestParamsCopyWithImpl;
+abstract mixin class $RestParamsCopyWith<$Res> {
+  factory $RestParamsCopyWith(
+          RestParams value, $Res Function(RestParams) _then) =
+      _$RestParamsCopyWithImpl;
   @useResult
   $Res call({int durationInSeconds});
 }
 
 /// @nodoc
-class _$AddRestParamsCopyWithImpl<$Res>
-    implements $AddRestParamsCopyWith<$Res> {
-  _$AddRestParamsCopyWithImpl(this._self, this._then);
+class _$RestParamsCopyWithImpl<$Res> implements $RestParamsCopyWith<$Res> {
+  _$RestParamsCopyWithImpl(this._self, this._then);
 
-  final AddRestParams _self;
-  final $Res Function(AddRestParams) _then;
+  final RestParams _self;
+  final $Res Function(RestParams) _then;
 
-  /// Create a copy of AddRestParams
+  /// Create a copy of RestParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -78,13 +76,13 @@ class _$AddRestParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _AddRestParams implements AddRestParams {
+class _AddRestParams implements RestParams {
   const _AddRestParams({required this.durationInSeconds});
 
   @override
   final int durationInSeconds;
 
-  /// Create a copy of AddRestParams
+  /// Create a copy of RestParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -106,13 +104,13 @@ class _AddRestParams implements AddRestParams {
 
   @override
   String toString() {
-    return 'AddRestParams(durationInSeconds: $durationInSeconds)';
+    return 'RestParams(durationInSeconds: $durationInSeconds)';
   }
 }
 
 /// @nodoc
 abstract mixin class _$AddRestParamsCopyWith<$Res>
-    implements $AddRestParamsCopyWith<$Res> {
+    implements $RestParamsCopyWith<$Res> {
   factory _$AddRestParamsCopyWith(
           _AddRestParams value, $Res Function(_AddRestParams) _then) =
       __$AddRestParamsCopyWithImpl;
@@ -129,7 +127,7 @@ class __$AddRestParamsCopyWithImpl<$Res>
   final _AddRestParams _self;
   final $Res Function(_AddRestParams) _then;
 
-  /// Create a copy of AddRestParams
+  /// Create a copy of RestParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')

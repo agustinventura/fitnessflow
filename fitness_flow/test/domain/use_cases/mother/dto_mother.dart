@@ -1,12 +1,12 @@
-import 'package:fitness_flow/domain/use_cases/routine/add_routine_params.dart';
-import 'package:fitness_flow/domain/use_cases/session/add_session_params.dart';
-import 'package:fitness_flow/domain/use_cases/exercise/add_exercise_params.dart';
-import 'package:fitness_flow/domain/use_cases/session_item/add_rest_params.dart';
-import 'package:fitness_flow/domain/use_cases/session_item/add_session_item_params.dart';
+import 'package:fitness_flow/domain/use_cases/exercise/dtos/exercise_params.dart';
+import 'package:fitness_flow/domain/use_cases/rest/dtos/rest_params.dart';
+import 'package:fitness_flow/domain/use_cases/routine/dtos/routine_params.dart';
+import 'package:fitness_flow/domain/use_cases/session/session_params.dart';
+import 'package:fitness_flow/domain/use_cases/session_item/dtos/session_item_params.dart';
 import 'package:fitness_flow/domain/value_objects/workout_unit.dart';
 
 class DtoMother {
-  static AddExerciseParams addExerciseParams({
+  static ExerciseParams exerciseParams({
     String name = 'Default Test Exercise',
     int targetSeriesCount = 3,
     int goalQuantity = 10,
@@ -14,7 +14,7 @@ class DtoMother {
     double? weightValue,
     int restTimeInSeconds = 60,
   }) =>
-      AddExerciseParams(
+      ExerciseParams(
         name: name,
         targetSeriesCount: targetSeriesCount,
         goalQuantity: goalQuantity,
@@ -23,10 +23,10 @@ class DtoMother {
         restTimeInSeconds: restTimeInSeconds,
       );
 
-  static AddRestParams addRestParams({required int duration}) =>
-      AddRestParams(durationInSeconds: duration);
+  static RestParams restParams({required int duration}) =>
+      RestParams(durationInSeconds: duration);
 
-  static AddSessionItemParams addExerciseSessionItemParams({
+  static SessionItemParams addExerciseSessionItemParams({
     String name = 'Default Test Exercise',
     int targetSeriesCount = 3,
     int goalQuantity = 10,
@@ -34,8 +34,8 @@ class DtoMother {
     double? weightValue,
     int restTimeInSeconds = 60,
   }) =>
-      AddSessionItemParams.exercise(
-          params: addExerciseParams(
+      SessionItemParams.exercise(
+          params: exerciseParams(
               name: name,
               targetSeriesCount: targetSeriesCount,
               goalQuantity: goalQuantity,
@@ -43,36 +43,36 @@ class DtoMother {
               weightValue: weightValue,
               restTimeInSeconds: restTimeInSeconds));
 
-  static AddSessionParams addSessionParams({
+  static SessionParams addSessionParams({
     String name = 'Default Test Session',
-    List<AddSessionItemParams>? items,
+    List<SessionItemParams>? items,
   }) =>
-      AddSessionParams(
+      SessionParams(
         name: name,
         items: items ?? [addExerciseSessionItemParams()],
       );
 
-  static AddRoutineParams addRoutineParams({
+  static RoutineParams routineParams({
     String name = 'Default Test Routine',
-    List<AddSessionParams>? initialSessions,
+    List<SessionParams>? initialSessions,
   }) =>
-      AddRoutineParams(
+      RoutineParams(
         name: name,
         initialSessions: initialSessions ?? [addSessionParams()],
       );
 
-  static AddRoutineParams addRoutineParamsEmpty({
+  static RoutineParams routineParamsEmpty({
     String name = 'Empty Test Routine',
   }) =>
-      AddRoutineParams(
+      RoutineParams(
         name: name,
         initialSessions: [],
       );
 
-  static AddRoutineParams addRoutineParamsWithSessions({
+  static RoutineParams routineParamsWithSessions({
     String name = 'Routine With Sessions',
   }) =>
-      AddRoutineParams(
+      RoutineParams(
         name: name,
         initialSessions: [
           addSessionParams(name: 'Session 1 - Push', items: [
@@ -91,12 +91,12 @@ class DtoMother {
         ],
       );
 
-  static AddRoutineParams addRoutineParamsWithEmptySessions({
+  static RoutineParams routineParamsWithEmptySessions({
     String name = 'Routine With Empty Sessions',
     String session1Name = 'Empty Session 1',
     String session2Name = 'Empty Session 2',
   }) =>
-      AddRoutineParams(
+      RoutineParams(
         name: name,
         initialSessions: [
           addSessionParams(name: session1Name, items: []),
@@ -104,25 +104,24 @@ class DtoMother {
         ],
       );
 
-  static AddRoutineParams addRoutineParamsWithMixedItems(
+  static RoutineParams routineParamsWithMixedItems(
           {required String routineName,
           required String sessionName,
           required String firsExerciseName,
           required String secondExerciseName,
           required int restDuration}) =>
-      AddRoutineParams(
+      RoutineParams(
         name: routineName,
         initialSessions: [
-          AddSessionParams(
+          SessionParams(
             name: sessionName,
             items: [
-              AddSessionItemParams.exercise(
-                  params: DtoMother.addExerciseParams(name: firsExerciseName)),
-              AddSessionItemParams.rest(
-                  params: DtoMother.addRestParams(duration: restDuration)),
-              AddSessionItemParams.exercise(
-                  params:
-                      DtoMother.addExerciseParams(name: secondExerciseName)),
+              SessionItemParams.exercise(
+                  params: DtoMother.exerciseParams(name: firsExerciseName)),
+              SessionItemParams.rest(
+                  params: DtoMother.restParams(duration: restDuration)),
+              SessionItemParams.exercise(
+                  params: DtoMother.exerciseParams(name: secondExerciseName)),
             ],
           ),
         ],

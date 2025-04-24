@@ -1,10 +1,10 @@
-import 'package:fitness_flow/domain/use_cases/routine/add_routine_params.dart';
+import 'package:fitness_flow/domain/use_cases/routine/dtos/routine_params.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../mother/dto_mother.dart';
+import '../../mother/dto_mother.dart';
 
 void main() {
-  group('AddRoutineParams Data Class', () {
+  group('RoutineParams Data Class', () {
     const tRoutineName = 'My New Routine';
     final tSessionParam1 = DtoMother.addSessionParams(name: 'Push');
     final tSessionParam2 = DtoMother.addSessionParams(name: 'Pull');
@@ -12,7 +12,7 @@ void main() {
     test(
         'should create instance successfully with required name and null sessions',
         () {
-      final params = AddRoutineParams(
+      final params = RoutineParams(
         name: tRoutineName,
         initialSessions: null,
       );
@@ -23,7 +23,7 @@ void main() {
     });
 
     test('should create instance successfully with empty sessions list', () {
-      final params = AddRoutineParams(
+      final params = RoutineParams(
         name: tRoutineName,
         initialSessions: [],
       );
@@ -34,7 +34,7 @@ void main() {
     });
 
     test('should create instance successfully with sessions list', () {
-      final params = AddRoutineParams(
+      final params = RoutineParams(
         name: tRoutineName,
         initialSessions: [tSessionParam1, tSessionParam2],
       );
@@ -47,12 +47,11 @@ void main() {
     });
 
     test('should support value equality', () {
-      final params1 = AddRoutineParams(
-          name: tRoutineName, initialSessions: [tSessionParam1]);
-      final params2 = AddRoutineParams(
-          name: tRoutineName, initialSessions: [tSessionParam1]);
-      final params3 =
-          AddRoutineParams(name: tRoutineName, initialSessions: null);
+      final params1 =
+          RoutineParams(name: tRoutineName, initialSessions: [tSessionParam1]);
+      final params2 =
+          RoutineParams(name: tRoutineName, initialSessions: [tSessionParam1]);
+      final params3 = RoutineParams(name: tRoutineName, initialSessions: null);
 
       expect(params1, equals(params2));
       expect(params1.hashCode, equals(params2.hashCode));
@@ -60,19 +59,19 @@ void main() {
     });
 
     test('should have distinct inequality when props differ', () {
-      final paramsBase = AddRoutineParams(
-          name: tRoutineName, initialSessions: [tSessionParam1]);
-      final paramsDiffName = AddRoutineParams(
+      final paramsBase =
+          RoutineParams(name: tRoutineName, initialSessions: [tSessionParam1]);
+      final paramsDiffName = RoutineParams(
           name: 'Other Routine', initialSessions: [tSessionParam1]);
-      final paramsDiffListContent = AddRoutineParams(
-          name: tRoutineName, initialSessions: [tSessionParam2]);
-      final paramsDiffListOrder = AddRoutineParams(
+      final paramsDiffListContent =
+          RoutineParams(name: tRoutineName, initialSessions: [tSessionParam2]);
+      final paramsDiffListOrder = RoutineParams(
           name: tRoutineName,
           initialSessions: [tSessionParam2, tSessionParam1]);
       final paramsDiffListLength =
-          AddRoutineParams(name: tRoutineName, initialSessions: []);
+          RoutineParams(name: tRoutineName, initialSessions: []);
       final paramsNullList =
-          AddRoutineParams(name: tRoutineName, initialSessions: null);
+          RoutineParams(name: tRoutineName, initialSessions: null);
 
       expect(paramsBase, isNot(equals(paramsDiffName)));
       expect(paramsBase, isNot(equals(paramsDiffListContent)));
@@ -83,8 +82,8 @@ void main() {
     });
 
     test('copyWith should create a copy with updated values correctly', () {
-      final originalParams = AddRoutineParams(
-          name: tRoutineName, initialSessions: [tSessionParam1]);
+      final originalParams =
+          RoutineParams(name: tRoutineName, initialSessions: [tSessionParam1]);
       final newSessions = [tSessionParam1, tSessionParam2];
 
       final updatedParamsName = originalParams.copyWith(name: 'Super Routine');

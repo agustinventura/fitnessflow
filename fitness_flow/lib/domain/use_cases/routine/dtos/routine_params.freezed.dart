@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_routine_params.dart';
+part of 'routine_params.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,23 +14,23 @@ part of 'add_routine_params.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AddRoutineParams {
+mixin _$RoutineParams {
   String get name;
-  List<AddSessionParams>? get initialSessions;
+  List<SessionParams>? get initialSessions;
 
-  /// Create a copy of AddRoutineParams
+  /// Create a copy of RoutineParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AddRoutineParamsCopyWith<AddRoutineParams> get copyWith =>
-      _$AddRoutineParamsCopyWithImpl<AddRoutineParams>(
-          this as AddRoutineParams, _$identity);
+  $RoutineParamsCopyWith<RoutineParams> get copyWith =>
+      _$RoutineParamsCopyWithImpl<RoutineParams>(
+          this as RoutineParams, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AddRoutineParams &&
+            other is RoutineParams &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
                 .equals(other.initialSessions, initialSessions));
@@ -42,28 +42,28 @@ mixin _$AddRoutineParams {
 
   @override
   String toString() {
-    return 'AddRoutineParams(name: $name, initialSessions: $initialSessions)';
+    return 'RoutineParams(name: $name, initialSessions: $initialSessions)';
   }
 }
 
 /// @nodoc
-abstract mixin class $AddRoutineParamsCopyWith<$Res> {
-  factory $AddRoutineParamsCopyWith(
-          AddRoutineParams value, $Res Function(AddRoutineParams) _then) =
-      _$AddRoutineParamsCopyWithImpl;
+abstract mixin class $RoutineParamsCopyWith<$Res> {
+  factory $RoutineParamsCopyWith(
+          RoutineParams value, $Res Function(RoutineParams) _then) =
+      _$RoutineParamsCopyWithImpl;
   @useResult
-  $Res call({String name, List<AddSessionParams>? initialSessions});
+  $Res call({String name, List<SessionParams>? initialSessions});
 }
 
 /// @nodoc
-class _$AddRoutineParamsCopyWithImpl<$Res>
-    implements $AddRoutineParamsCopyWith<$Res> {
-  _$AddRoutineParamsCopyWithImpl(this._self, this._then);
+class _$RoutineParamsCopyWithImpl<$Res>
+    implements $RoutineParamsCopyWith<$Res> {
+  _$RoutineParamsCopyWithImpl(this._self, this._then);
 
-  final AddRoutineParams _self;
-  final $Res Function(AddRoutineParams) _then;
+  final RoutineParams _self;
+  final $Res Function(RoutineParams) _then;
 
-  /// Create a copy of AddRoutineParams
+  /// Create a copy of RoutineParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -79,23 +79,23 @@ class _$AddRoutineParamsCopyWithImpl<$Res>
       initialSessions: freezed == initialSessions
           ? _self.initialSessions
           : initialSessions // ignore: cast_nullable_to_non_nullable
-              as List<AddSessionParams>?,
+              as List<SessionParams>?,
     ));
   }
 }
 
 /// @nodoc
 
-class _AddRoutineParams implements AddRoutineParams {
+class _AddRoutineParams implements RoutineParams {
   const _AddRoutineParams(
-      {required this.name, final List<AddSessionParams>? initialSessions})
+      {required this.name, final List<SessionParams>? initialSessions})
       : _initialSessions = initialSessions;
 
   @override
   final String name;
-  final List<AddSessionParams>? _initialSessions;
+  final List<SessionParams>? _initialSessions;
   @override
-  List<AddSessionParams>? get initialSessions {
+  List<SessionParams>? get initialSessions {
     final value = _initialSessions;
     if (value == null) return null;
     if (_initialSessions is EqualUnmodifiableListView) return _initialSessions;
@@ -103,7 +103,7 @@ class _AddRoutineParams implements AddRoutineParams {
     return EqualUnmodifiableListView(value);
   }
 
-  /// Create a copy of AddRoutineParams
+  /// Create a copy of RoutineParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -127,19 +127,19 @@ class _AddRoutineParams implements AddRoutineParams {
 
   @override
   String toString() {
-    return 'AddRoutineParams(name: $name, initialSessions: $initialSessions)';
+    return 'RoutineParams(name: $name, initialSessions: $initialSessions)';
   }
 }
 
 /// @nodoc
 abstract mixin class _$AddRoutineParamsCopyWith<$Res>
-    implements $AddRoutineParamsCopyWith<$Res> {
+    implements $RoutineParamsCopyWith<$Res> {
   factory _$AddRoutineParamsCopyWith(
           _AddRoutineParams value, $Res Function(_AddRoutineParams) _then) =
       __$AddRoutineParamsCopyWithImpl;
   @override
   @useResult
-  $Res call({String name, List<AddSessionParams>? initialSessions});
+  $Res call({String name, List<SessionParams>? initialSessions});
 }
 
 /// @nodoc
@@ -150,7 +150,7 @@ class __$AddRoutineParamsCopyWithImpl<$Res>
   final _AddRoutineParams _self;
   final $Res Function(_AddRoutineParams) _then;
 
-  /// Create a copy of AddRoutineParams
+  /// Create a copy of RoutineParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -166,7 +166,7 @@ class __$AddRoutineParamsCopyWithImpl<$Res>
       initialSessions: freezed == initialSessions
           ? _self._initialSessions
           : initialSessions // ignore: cast_nullable_to_non_nullable
-              as List<AddSessionParams>?,
+              as List<SessionParams>?,
     ));
   }
 }

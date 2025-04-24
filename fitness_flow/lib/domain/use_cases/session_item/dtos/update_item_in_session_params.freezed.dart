@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_exercise_to_session_params.dart';
+part of 'update_item_in_session_params.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,75 +14,79 @@ part of 'add_exercise_to_session_params.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AddExerciseToSessionParams {
+mixin _$UpdateItemInSessionParams {
   RoutineId get routineId;
   SessionId get sessionId;
-  AddExerciseParams get exerciseParams;
+  int get itemOrder;
+  SessionItemParams get itemData;
 
-  /// Create a copy of AddExerciseToSessionParams
+  /// Create a copy of UpdateItemInSessionParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AddExerciseToSessionParamsCopyWith<AddExerciseToSessionParams>
-      get copyWith =>
-          _$AddExerciseToSessionParamsCopyWithImpl<AddExerciseToSessionParams>(
-              this as AddExerciseToSessionParams, _$identity);
+  $UpdateItemInSessionParamsCopyWith<UpdateItemInSessionParams> get copyWith =>
+      _$UpdateItemInSessionParamsCopyWithImpl<UpdateItemInSessionParams>(
+          this as UpdateItemInSessionParams, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AddExerciseToSessionParams &&
+            other is UpdateItemInSessionParams &&
             (identical(other.routineId, routineId) ||
                 other.routineId == routineId) &&
             (identical(other.sessionId, sessionId) ||
                 other.sessionId == sessionId) &&
-            (identical(other.exerciseParams, exerciseParams) ||
-                other.exerciseParams == exerciseParams));
+            (identical(other.itemOrder, itemOrder) ||
+                other.itemOrder == itemOrder) &&
+            (identical(other.itemData, itemData) ||
+                other.itemData == itemData));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, routineId, sessionId, exerciseParams);
+      Object.hash(runtimeType, routineId, sessionId, itemOrder, itemData);
 
   @override
   String toString() {
-    return 'AddExerciseToSessionParams(routineId: $routineId, sessionId: $sessionId, exerciseParams: $exerciseParams)';
+    return 'UpdateItemInSessionParams(routineId: $routineId, sessionId: $sessionId, itemOrder: $itemOrder, itemData: $itemData)';
   }
 }
 
 /// @nodoc
-abstract mixin class $AddExerciseToSessionParamsCopyWith<$Res> {
-  factory $AddExerciseToSessionParamsCopyWith(AddExerciseToSessionParams value,
-          $Res Function(AddExerciseToSessionParams) _then) =
-      _$AddExerciseToSessionParamsCopyWithImpl;
+abstract mixin class $UpdateItemInSessionParamsCopyWith<$Res> {
+  factory $UpdateItemInSessionParamsCopyWith(UpdateItemInSessionParams value,
+          $Res Function(UpdateItemInSessionParams) _then) =
+      _$UpdateItemInSessionParamsCopyWithImpl;
   @useResult
   $Res call(
       {RoutineId routineId,
       SessionId sessionId,
-      AddExerciseParams exerciseParams});
+      int itemOrder,
+      SessionItemParams itemData});
 
   $RoutineIdCopyWith<$Res> get routineId;
   $SessionIdCopyWith<$Res> get sessionId;
-  $AddExerciseParamsCopyWith<$Res> get exerciseParams;
+  $SessionItemParamsCopyWith<$Res> get itemData;
 }
 
 /// @nodoc
-class _$AddExerciseToSessionParamsCopyWithImpl<$Res>
-    implements $AddExerciseToSessionParamsCopyWith<$Res> {
-  _$AddExerciseToSessionParamsCopyWithImpl(this._self, this._then);
+class _$UpdateItemInSessionParamsCopyWithImpl<$Res>
+    implements $UpdateItemInSessionParamsCopyWith<$Res> {
+  _$UpdateItemInSessionParamsCopyWithImpl(this._self, this._then);
 
-  final AddExerciseToSessionParams _self;
-  final $Res Function(AddExerciseToSessionParams) _then;
+  final UpdateItemInSessionParams _self;
+  final $Res Function(UpdateItemInSessionParams) _then;
 
-  /// Create a copy of AddExerciseToSessionParams
+  /// Create a copy of UpdateItemInSessionParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? routineId = null,
     Object? sessionId = null,
-    Object? exerciseParams = null,
+    Object? itemOrder = null,
+    Object? itemData = null,
   }) {
     return _then(_self.copyWith(
       routineId: null == routineId
@@ -93,14 +97,18 @@ class _$AddExerciseToSessionParamsCopyWithImpl<$Res>
           ? _self.sessionId
           : sessionId // ignore: cast_nullable_to_non_nullable
               as SessionId,
-      exerciseParams: null == exerciseParams
-          ? _self.exerciseParams
-          : exerciseParams // ignore: cast_nullable_to_non_nullable
-              as AddExerciseParams,
+      itemOrder: null == itemOrder
+          ? _self.itemOrder
+          : itemOrder // ignore: cast_nullable_to_non_nullable
+              as int,
+      itemData: null == itemData
+          ? _self.itemData
+          : itemData // ignore: cast_nullable_to_non_nullable
+              as SessionItemParams,
     ));
   }
 
-  /// Create a copy of AddExerciseToSessionParams
+  /// Create a copy of UpdateItemInSessionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -110,7 +118,7 @@ class _$AddExerciseToSessionParamsCopyWithImpl<$Res>
     });
   }
 
-  /// Create a copy of AddExerciseToSessionParams
+  /// Create a copy of UpdateItemInSessionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -120,104 +128,111 @@ class _$AddExerciseToSessionParamsCopyWithImpl<$Res>
     });
   }
 
-  /// Create a copy of AddExerciseToSessionParams
+  /// Create a copy of UpdateItemInSessionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AddExerciseParamsCopyWith<$Res> get exerciseParams {
-    return $AddExerciseParamsCopyWith<$Res>(_self.exerciseParams, (value) {
-      return _then(_self.copyWith(exerciseParams: value));
+  $SessionItemParamsCopyWith<$Res> get itemData {
+    return $SessionItemParamsCopyWith<$Res>(_self.itemData, (value) {
+      return _then(_self.copyWith(itemData: value));
     });
   }
 }
 
 /// @nodoc
 
-class _AddExerciseToSessionParams implements AddExerciseToSessionParams {
-  const _AddExerciseToSessionParams(
+class _UpdateItemInSessionParams implements UpdateItemInSessionParams {
+  const _UpdateItemInSessionParams(
       {required this.routineId,
       required this.sessionId,
-      required this.exerciseParams});
+      required this.itemOrder,
+      required this.itemData});
 
   @override
   final RoutineId routineId;
   @override
   final SessionId sessionId;
   @override
-  final AddExerciseParams exerciseParams;
+  final int itemOrder;
+  @override
+  final SessionItemParams itemData;
 
-  /// Create a copy of AddExerciseToSessionParams
+  /// Create a copy of UpdateItemInSessionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AddExerciseToSessionParamsCopyWith<_AddExerciseToSessionParams>
-      get copyWith => __$AddExerciseToSessionParamsCopyWithImpl<
-          _AddExerciseToSessionParams>(this, _$identity);
+  _$UpdateItemInSessionParamsCopyWith<_UpdateItemInSessionParams>
+      get copyWith =>
+          __$UpdateItemInSessionParamsCopyWithImpl<_UpdateItemInSessionParams>(
+              this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AddExerciseToSessionParams &&
+            other is _UpdateItemInSessionParams &&
             (identical(other.routineId, routineId) ||
                 other.routineId == routineId) &&
             (identical(other.sessionId, sessionId) ||
                 other.sessionId == sessionId) &&
-            (identical(other.exerciseParams, exerciseParams) ||
-                other.exerciseParams == exerciseParams));
+            (identical(other.itemOrder, itemOrder) ||
+                other.itemOrder == itemOrder) &&
+            (identical(other.itemData, itemData) ||
+                other.itemData == itemData));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, routineId, sessionId, exerciseParams);
+      Object.hash(runtimeType, routineId, sessionId, itemOrder, itemData);
 
   @override
   String toString() {
-    return 'AddExerciseToSessionParams(routineId: $routineId, sessionId: $sessionId, exerciseParams: $exerciseParams)';
+    return 'UpdateItemInSessionParams(routineId: $routineId, sessionId: $sessionId, itemOrder: $itemOrder, itemData: $itemData)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$AddExerciseToSessionParamsCopyWith<$Res>
-    implements $AddExerciseToSessionParamsCopyWith<$Res> {
-  factory _$AddExerciseToSessionParamsCopyWith(
-          _AddExerciseToSessionParams value,
-          $Res Function(_AddExerciseToSessionParams) _then) =
-      __$AddExerciseToSessionParamsCopyWithImpl;
+abstract mixin class _$UpdateItemInSessionParamsCopyWith<$Res>
+    implements $UpdateItemInSessionParamsCopyWith<$Res> {
+  factory _$UpdateItemInSessionParamsCopyWith(_UpdateItemInSessionParams value,
+          $Res Function(_UpdateItemInSessionParams) _then) =
+      __$UpdateItemInSessionParamsCopyWithImpl;
   @override
   @useResult
   $Res call(
       {RoutineId routineId,
       SessionId sessionId,
-      AddExerciseParams exerciseParams});
+      int itemOrder,
+      SessionItemParams itemData});
 
   @override
   $RoutineIdCopyWith<$Res> get routineId;
   @override
   $SessionIdCopyWith<$Res> get sessionId;
   @override
-  $AddExerciseParamsCopyWith<$Res> get exerciseParams;
+  $SessionItemParamsCopyWith<$Res> get itemData;
 }
 
 /// @nodoc
-class __$AddExerciseToSessionParamsCopyWithImpl<$Res>
-    implements _$AddExerciseToSessionParamsCopyWith<$Res> {
-  __$AddExerciseToSessionParamsCopyWithImpl(this._self, this._then);
+class __$UpdateItemInSessionParamsCopyWithImpl<$Res>
+    implements _$UpdateItemInSessionParamsCopyWith<$Res> {
+  __$UpdateItemInSessionParamsCopyWithImpl(this._self, this._then);
 
-  final _AddExerciseToSessionParams _self;
-  final $Res Function(_AddExerciseToSessionParams) _then;
+  final _UpdateItemInSessionParams _self;
+  final $Res Function(_UpdateItemInSessionParams) _then;
 
-  /// Create a copy of AddExerciseToSessionParams
+  /// Create a copy of UpdateItemInSessionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
     Object? routineId = null,
     Object? sessionId = null,
-    Object? exerciseParams = null,
+    Object? itemOrder = null,
+    Object? itemData = null,
   }) {
-    return _then(_AddExerciseToSessionParams(
+    return _then(_UpdateItemInSessionParams(
       routineId: null == routineId
           ? _self.routineId
           : routineId // ignore: cast_nullable_to_non_nullable
@@ -226,14 +241,18 @@ class __$AddExerciseToSessionParamsCopyWithImpl<$Res>
           ? _self.sessionId
           : sessionId // ignore: cast_nullable_to_non_nullable
               as SessionId,
-      exerciseParams: null == exerciseParams
-          ? _self.exerciseParams
-          : exerciseParams // ignore: cast_nullable_to_non_nullable
-              as AddExerciseParams,
+      itemOrder: null == itemOrder
+          ? _self.itemOrder
+          : itemOrder // ignore: cast_nullable_to_non_nullable
+              as int,
+      itemData: null == itemData
+          ? _self.itemData
+          : itemData // ignore: cast_nullable_to_non_nullable
+              as SessionItemParams,
     ));
   }
 
-  /// Create a copy of AddExerciseToSessionParams
+  /// Create a copy of UpdateItemInSessionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -243,7 +262,7 @@ class __$AddExerciseToSessionParamsCopyWithImpl<$Res>
     });
   }
 
-  /// Create a copy of AddExerciseToSessionParams
+  /// Create a copy of UpdateItemInSessionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -253,13 +272,13 @@ class __$AddExerciseToSessionParamsCopyWithImpl<$Res>
     });
   }
 
-  /// Create a copy of AddExerciseToSessionParams
+  /// Create a copy of UpdateItemInSessionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AddExerciseParamsCopyWith<$Res> get exerciseParams {
-    return $AddExerciseParamsCopyWith<$Res>(_self.exerciseParams, (value) {
-      return _then(_self.copyWith(exerciseParams: value));
+  $SessionItemParamsCopyWith<$Res> get itemData {
+    return $SessionItemParamsCopyWith<$Res>(_self.itemData, (value) {
+      return _then(_self.copyWith(itemData: value));
     });
   }
 }

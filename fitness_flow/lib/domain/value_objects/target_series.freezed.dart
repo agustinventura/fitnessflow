@@ -85,7 +85,7 @@ class _$TargetSeriesCopyWithImpl<$Res> implements $TargetSeriesCopyWith<$Res> {
 
 class _TargetSeries extends TargetSeries with DiagnosticableTreeMixin {
   const _TargetSeries({required this.count})
-      : assert(count > 0, 'El número de series objetivo debe ser positivo.'),
+      : assert(count > 0, 'Target series count must be positive.'),
         super._();
 
   @override

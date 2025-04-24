@@ -7,7 +7,7 @@ part 'target_series.freezed.dart';
 abstract class TargetSeries with _$TargetSeries {
   const TargetSeries._();
 
-  @Assert('count > 0', 'El número de series objetivo debe ser positivo.')
+  @Assert('count > 0', 'Target series count must be positive.')
   const factory TargetSeries({
     required int count,
   }) = _TargetSeries;
